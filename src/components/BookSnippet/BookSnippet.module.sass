@@ -1,0 +1,51 @@
+@import '../../ui/Colors'
+
+.wrapper
+    position: relative
+    width: 300px
+    min-width: 300px
+    margin: 32px
+    padding: 16px 
+    display: flex
+    align-items: center
+    border: 1px solid $lightGrey
+    border-radius: 8px
+    filter: drop-shadow(0px 0px 4px $lightGrey)
+    cursor: pointer
+    transition: box-shadow 130ms
+    &:hover
+        box-shadow: 0px 0px 4px $primary, 0px 0px 2px $success
+
+.textBlock
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    flex: 1
+    margin: 4px
+
+.title
+    margin-bottom: 4px
+    color: $black
+    font-family: sans-serif
+    font-size: 16px
+    text-align: center
+
+.text
+    color: $lightBlack
+    font-family: sans-serif
+    font-size: 14px
+    text-indent: 8px
+    text-align: center
+
+.img
+    width: 75px
+    height: 75px
+    border-radius: 8px
+    background-size: cover
+
+@media (max-width: 768px)
+    .wrapper
+        margin: 16px
+    .wrapper:hover
+        animation: none
