@@ -17,10 +17,12 @@ const BookSnippet = ({
 
     return (
         <div className={classes.wrapper} onClick={onClick}>
-            <div
-                style={{ backgroundImage: `url(${urlImg})` }}
-                className={classes.img}
-            />
+            {urlImg && (
+                <div
+                    style={{ backgroundImage: `url(${urlImg})` }}
+                    className={classes.img}
+                />
+            )}
             <div className={[classes.textBlock].join(' ')}>
                 <span className={classes.title} title={title}>
                     {title}
