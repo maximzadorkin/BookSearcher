@@ -1,0 +1,45 @@
+@import '../../ui/Colors'
+
+.wrapper
+    padding: 32px
+    display: flex
+    flex-direction: column
+
+.imgWrapper
+    height: 256px
+    width: 256px
+    margin-bottom: 16px
+    display: flex
+    align-items: center
+    justify-content: center
+    overflow: hidden
+
+.img
+    height: 100%
+    border-radius: 4px
+
+.textWrapper
+    display: flex
+    flex-direction: column
+
+.paramBlock
+    margin-bottom: 8px
+
+.text, .title
+    display: inline
+    margin-right: 4px
+    font-family: sans-serif
+    color: $lightBlack
+    font-size: 14px
+    font-weight: 500
+
+.title
+    margin-bottom: 8px
+    font-weight: 700
+    font-size: 18px
+    color: $black
+
+
+@media (max-width: 768px)
+    .imgWrapper
+        height: 240px
