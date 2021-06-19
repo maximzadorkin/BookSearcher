@@ -22,7 +22,7 @@ module.exports = {
         rules: [
             {
                 test: /\.sass$/i,
-                use: ['style-loader', 'css-modules-typescript-loader', 'css-loader', 'sass-loader']
+                use: ['style-loader', 'css-modules-typescript-loader', 'css-loader', 'postcss-loader', 'sass-loader']
             },
             {
                 test: /\.(png|jpg|gif|svg)$/i,
