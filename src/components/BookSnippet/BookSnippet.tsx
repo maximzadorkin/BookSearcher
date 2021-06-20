@@ -3,7 +3,7 @@ import classes from './BookSnippet.module.sass'
 
 interface IBookSnippet {
     title: string
-    author: string
+    author: string | string[]
     urlImg: string
     onClick?: () => void
 }
@@ -14,21 +14,25 @@ const BookSnippet = ({
     onClick,
 }: IBookSnippet): React.ReactElement => {
     const maxTextLength = 60
+    const [HaveImg, SetHaveImg] = React.useState(Boolean(urlImg))
 
     return (
         <div className={classes.wrapper} onClick={onClick}>
-            {urlImg && (
-                <div
-                    style={{ backgroundImage: `url(${urlImg})` }}
-                    className={classes.img}
-                />
-            )}
+            <div
+                style={{
+                    backgroundImage: `url(${urlImg})`,
+                    display: !HaveImg && 'none',
+                }}
+                className={classes.img}
+                onLoad={() => SetHaveImg(true)}
+                onError={() => SetHaveImg(false)}
+            />
             <div className={[classes.textBlock].join(' ')}>
                 <span className={classes.title} title={title}>
                     {title}
                 </span>
                 <p className={classes.text}>
-                    {`${author}`.slice(0, maxTextLength)}
+                    {`${author.toString()}`.slice(0, maxTextLength)}
                 </p>
             </div>
         </div>

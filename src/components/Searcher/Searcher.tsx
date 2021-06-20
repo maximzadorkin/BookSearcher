@@ -31,7 +31,7 @@ const Searcher = ({
     const [styles, setStyles] = useState(initStyles)
     const [value, setValue] = useState('')
     const [dateOfChanges, setDateOfChanges] = useState(null)
-    const [searched, setSearched] = useState(false)
+    const [searched, setSearched] = useState(true)
     const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         search(value)
