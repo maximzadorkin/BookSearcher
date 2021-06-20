@@ -4,18 +4,18 @@ import classes from './Button.module.sass'
 interface IButton {
     onClick: () => void
     children: string | React.ReactElement | HTMLElement
-    type?: 'primary' | 'success' | 'error' | 'inherit'
+    variant?: 'primary' | 'success' | 'error' | 'inherit'
     style?: object
 }
 
 const Button = ({
     onClick,
     children,
-    type,
+    variant,
     style,
 }: IButton): React.ReactElement => {
     const btnClasses = [classes.button]
-    switch (type) {
+    switch (variant) {
         case 'primary':
             btnClasses.push(classes.primary)
             break
